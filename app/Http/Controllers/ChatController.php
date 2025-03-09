@@ -13,8 +13,8 @@ class ChatController extends Controller
 {
     public function index()
     {
-        $messages = Message::with('user')->latest()->take(10)->get()->reverse();
-        return view('chat.index', compact('messages'));
+        $messages = Message::with('user')->latest()->take(20)->get()->reverse();
+        return view('chatting.index', compact('messages'));
     }
 
     public function store(Request $request)
